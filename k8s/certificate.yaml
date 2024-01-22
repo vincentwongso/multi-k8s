@@ -1,20 +1,13 @@
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: k8s-multi-com-tls
+  name: vincewong-dev-tls
 spec:
-  secretName: k8s-multi-com
+  secretName: vincewong-dev
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s-multi.com
+  commonName: vincewong.dev
   dnsNames:
-    - k8s-multi.com
-    - www.k8s-multi.com
-  acme:
-    config:
-      - http01:
-          ingressClass: nginx
-        domains:
-          - k8s-multi.com
-          - www.k8s-multi.com
+    - vincewong.dev
+    - www.vincewong.dev
